@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Cast!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Nate Papadogiannis' Personal Website">
+<meta name="keywords" content="Nate Papadogiannis, Nathan Papadogiannis, Papadogiannis, Nate From Queens, NateFromQueens, Programming, CS, Software, Worm Week, Brellbert, HumanCast, Software Engineer Intern, Software Development Intern, Computer Science Intern">
+<meta name="author" content="Nate Papadogiannis">
+<meta property="og:image" content="NateAvi.jpg">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="nate.ico">
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<style>
+    body {
+        padding-top: 14px;
+        font-family: Arial,sans-serif;
+        background-color: #e7dfd8;
+    }
+    .mySlides {display: none}
+</style>
+<body>
+
+{% include "header.html" %}
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:55px; padding: 0 40px 40px;">
+    {% block content %}{% endblock %}
+</div>
+<!-- End Page Content -->
+
+
+<script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 4000);
+    }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function smallNavToggle() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") === -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+    function darkToggle(){
+        var background = document.body;
+        var containers = document.getElementsByClassName("w3-container");
+        for (let i = 0; i < containers.length; i++) {
+            darkMode(containers[i]);
+        }
+        darkMode(background)
+    }
+
+    function darkMode(element){
+        element.classList.toggle("dark-mode")
+    }
+</script>
+
+</body>
+</html>

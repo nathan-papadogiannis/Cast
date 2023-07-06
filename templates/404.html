@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>404!</title>
+
+{% extends "base.html" %}
+<body>
+{% block content %}
+    <div>
+        <div class="w3-row-padding w3-padding-hor-32" style="margin:0 -16px">
+            <div class="movingbox w3-margin-bottom">
+                <div class="w3-container w3-border w3-border-black w3-round-large " style="filter: drop-shadow(6px 6px 5px #838983); padding-top: -8px">
+                    <h2 class="w3-wide w3-center w3-margin-top">404!</h2>
+                    <h5 class="w3-center w3-text-dark-gray" style="margin-top: -5px"><i>You've fallen overboard</i></h5>
+                    <div class="w3-cell-top">
+                        <div class="w3-cell">
+                            <hr style="margin-left: 40px; margin-right: 40px; border-top: 1px solid black">
+                            <p class="w3-justify w3-margin-bottom" style ="word-wrap: break-word; padding-left: 40px; padding-right: 40px">
+                            Oops! Looks like you've wandered off course into uncharted territory, matey! This be the infamous 404 page, where lost souls find themselves adrift in the vast expanse of the digital sea. But fear not, for a helping hand is here to steer you back to familiar shores! Just give the button below a click, and we'll navigate you safely back to the home port.<br>
+                            </p>
+                            <div class="w3-container w3-center">
+                                <span class="underline w3-tag w3-text-black css-selector w3-border w3-border-black w3-round-large w3-hover-amber w3-medium">
+                                <a href= home.html>Go Home</a>
+                            </span></div>
+
+                            <h3 class="w3-margin-top w3-margin-bottom w3-right-align" style="padding: 0 40px 0">- Captain Brellbert</h3>
+                            <hr style="margin-left: 40px; margin-right: 40px; border-top: 1px solid black">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

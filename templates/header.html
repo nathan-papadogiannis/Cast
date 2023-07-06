@@ -1,0 +1,25 @@
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar css-selector w3-card w3-border-bottom w3-border-black">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="smallNavToggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <div style=" flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
+          <div style="align-self: stretch; padding-left: 92px; padding-right: 92px; justify-content: space-between; align-items: flex-start; gap: 44px; display: inline-flex">
+            <div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word" class="turn w3-hover-blue w3-text-black w3-button w3-padding-large w3-hide-small"><a href="{% url 'home' %}">Home</a></div>
+            <div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word" class="turn w3-hover-amber w3-text-black w3-button w3-padding-large w3-hide-small"><a href="{% url 'cast' %}">Cast!</a></div>
+            <div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word" class="turn w3-hover-white w3-text-black w3-button w3-padding-large w3-hide-small"><a href="{% url 'about' %}">About</a></div>
+            <div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word" class="turn w3-hover-light-blue w3-text-black w3-button w3-padding-large w3-hide-small"><a href="{% url 'news' %}">News</a></div>
+            <div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word" class="turn w3-hover-red w3-text-black w3-button w3-padding-large w3-hide-small"><a href="{% url 'account' %}">Account</a></div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="{% url 'home' %}" class="w3-bar-item w3-button w3-padding-large" onclick="smallNavToggle()">HOME</a>
+    <a href="{% url 'cast' %}" class="w3-bar-item w3-button w3-padding-large" onclick="smallNavToggle()">CAST!</a>
+    <a href="{% url 'about' %}" class="w3-bar-item w3-button w3-padding-large" onclick="smallNavToggle()">ABOUT</a>
+    <a href="{% url 'news' %}" class="w3-bar-item w3-button w3-padding-large" onclick="smallNavToggle()">NEWS</a>
+    <a href="{% url 'account' %}" class="w3-bar-item w3-button w3-padding-large" onclick="smallNavToggle()">ACCOUNTS</a>
+
+</div>

@@ -1,0 +1,187 @@
+.w3-container{
+    background-color: floralwhite;
+}
+a.underline {
+    text-decoration: none;
+    position: relative;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bolder;
+    border-radius: 8px;
+    background-color: cornflowerblue;
+    background-image: linear-gradient(black, mediumseagreen);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-size: 0 2px;
+    transition: background-size cubic-bezier(0,.5,0,1) 0.3s;
+}
+a.underline:hover,
+a.underline:focus {
+    text-decoration: none;
+    color: cornflowerblue;
+    background-color: rgba(255,202,13,0.41);
+    background-size: 100% 2px;
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: -60px;
+    visibility: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.btn {
+    border: 1px;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: transform 0.3s;
+}
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #3e8e41;
+    color: white;
+}
+.btn:active {
+    transform: translateY(8px);
+}
+
+img{
+    transition: transform .2s ease-in-out; /* Animation */
+    margin: 0 auto;
+}
+img:hover{
+    border-radius: 8px;
+    transform: translateY(-3%) scale(1);
+}
+
+.turn{
+    transition: transform .1s ease-in-out; /* Animation */
+    margin: 0 auto;
+}
+.turn:hover{
+    transform: scale(1.1) rotate(-6deg);
+}
+.turn:active{
+    transform: scale(1.1) rotate(30deg);
+}
+
+.movingbox{
+    transition: transform .3s ease-in-out; /* Animation */
+    margin: 0 auto;
+}
+.movingbox:hover{
+    transform: translateY(-1px)
+}
+.w3-tag{
+    transition: transform .1s ease-out; /* Animation */
+    margin: 0 auto;
+}
+.w3-tag:hover{
+    transform: translateY(-3px) scale(1.03)
+}
+
+.fa{
+    transition: transform .1s ease-out; /* Animation */
+    margin: 0 auto;
+}
+.fa:hover{
+    transform:scale(1.2);
+}
+.fa:active{
+    transform: translateY(8px);
+}
+
+.zoom {
+    transition: transform .2s ease-in-out; /* Animation */
+    margin: 0 auto;
+}
+.zoom:hover {
+    border-radius: 8px;
+    transform: translateX(0) translateY(-3px) scale(1);
+}
+.zoom:active{
+}
+.weather-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weather-card h2 {
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-basis: 100%;
+}
+
+.weather-item {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.weather-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.temperature {
+  font-weight: bold;
+}
+
+.pressure,
+.humidity,
+.wind-speed,
+.wind-deg {
+  margin-top: 10px;
+}
+
+.news-post-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.css-selector {
+    background: linear-gradient(91deg, #87CEEB, whitesmoke);
+    background-size: 400% 400%;
+
+    -webkit-animation: Waves 14s ease infinite;
+    -moz-animation: Waves 14s ease infinite;
+    animation: Waves 14s ease infinite;
+}
+@-webkit-keyframes Waves {
+    0%{background-position:0 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0 52%}
+}
+@-moz-keyframes Waves {
+    0%{background-position:0 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0 52%}
+}
+@keyframes Waves {
+    0%{background-position:0 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0 52%}
+}
