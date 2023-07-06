@@ -12,6 +12,7 @@ class NewsPostAdminForm(forms.ModelForm):
         model = NewsPost
         fields = '__all__'
 
+
 @admin.register(NewsPost)
 class NewsPostAdmin(admin.ModelAdmin):
     form = NewsPostAdminForm

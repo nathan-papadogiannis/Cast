@@ -1,9 +1,8 @@
-from django.http import HttpResponse
+from datetime import datetime
+
 from django.shortcuts import render
 
 from forecast.forecast import get_forecast
-from datetime import datetime, timedelta
-
 from forecast.models import NewsPost
 
 
@@ -43,7 +42,7 @@ def cast_select(request):
 
 
 def cast_current(request):
-    forecast = get_forecast(11360).current
+    forecast = get_forecast(11360)
     sp = calculate_sun_position()
     return render(request, 'cast_result.html', context={
         'current': forecast,

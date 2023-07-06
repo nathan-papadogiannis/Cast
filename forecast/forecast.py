@@ -1,7 +1,7 @@
 # import required modules
 from datetime import datetime
 
-import requests, json
+import requests
 import pgeocode
 import credentials
 
