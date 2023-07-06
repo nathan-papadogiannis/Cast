@@ -36,14 +36,14 @@ class Current:
 
 class Hourly:
     def __init__(self, data):
-        self.dt = datetime.fromtimestamp(data['dt'])
-        self.temp = data['temp']
-        self.feels_like = data['feels_like']
+        self.dt = datetime.fromtimestamp(data['dt']).strftime("%a %I %p")
+        self.temp = int(data['temp'])
+        self.feels_like = int(data['feels_like'])
         self.pressure = data['pressure']
         self.humidity = data['humidity']
-        self.dew_point = data['dew_point']
+        self.dew_point = int(data['dew_point'])
         self.uvi = data['uvi']
-        self.clouds = data['clouds']
+        self.clouds = str(data['clouds']) + '%'
         self.visibility = data['visibility']
         self.wind_speed = data['wind_speed']
         self.wind_deg = data['wind_deg']
@@ -52,7 +52,7 @@ class Hourly:
         self.pop = data['pop']
 
     def __str__(self):
-        return self.dt.strftime("%a %I %p") + ": " + str(self.weather[0])
+        return self.dt + ": " + str(self.weather[0])
 
 
 class Daily:

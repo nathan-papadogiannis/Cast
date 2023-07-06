@@ -45,7 +45,8 @@ def cast_current(request):
     forecast = get_forecast(11360)
     sp = calculate_sun_position()
     return render(request, 'cast_result.html', context={
-        'current': forecast,
+        'current': forecast.current,
+        'hourly': forecast.hourly,
         "sunPosition": sp,
     })
 
@@ -65,7 +66,7 @@ def cast_daily(request):
 
 
 def about(request):
-    return None
+    return render(request, 'about.html')
 
 
 def account(request):
