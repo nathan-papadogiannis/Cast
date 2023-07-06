@@ -5,23 +5,30 @@
 {% extends "base.html" %}
 <body>
 {% block content %}
-    <div>
-        <div class="w3-row-padding w3-padding-hor-32" style="margin:0 -16px">
-            <div class="movingbox w3-margin-bottom">
-                <div class="w3-container w3-border w3-border-black w3-round-large " style="filter: drop-shadow(6px 6px 5px #838983); padding-top: -8px">
-                    <h2 class="w3-wide w3-center w3-margin-top">Choose A Cast!</h2>
-                    <h5 class="w3-center w3-text-dark-gray" style="margin-top: -5px"><i>Select One Below</i></h5>
-                    <hr style="border-top: 1px solid black">
-                    <div class="w3-cell-top" style="display: flex; justify-content: center; align-self: center;">
-                        <div style="min-height: fit-content; min-width: fit-content" class="w3-center w3-wide w3-cell">
-                            <div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word" class="turn w3-hover-blue w3-text-black w3-padding-large "><a href="{% url 'cast_current' %}">Now</a></div>
-                            <div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word" class="turn w3-hover-amber w3-text-black w3-padding-large"><a href="{% url 'cast_hourly' %}">Hourly</a></div>
-                            <div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word" class="turn w3-hover-red w3-text-black w3-padding-large"><a href="{% url 'cast_daily' %}">Daily</a></div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div>
+		<div class="w3-row-padding w3-padding-hor-32" style="margin:0 -16px">
+			<div class="movingbox w3-margin-bottom">
+				<div class="w3-container w3-border w3-border-black w3-round-large "
+				     style="filter: drop-shadow(6px 6px 5px #838983); padding-top: -8px">
+					<h2 class="w3-wide w3-center w3-margin-top">Choose A Cast!</h2>
+					<h5 class="w3-center w3-text-dark-gray" style="margin-top: -5px"><i>Select One Below</i></h5>
+					<hr style="border-top: 1px solid black">
+					<div class="w3-cell-top" style="display: flex; justify-content: center; align-self: center;">
+						<div style="min-height: fit-content; min-width: fit-content" class="w3-center w3-wide w3-cell">
+							<div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word"
+							     class="turn w3-hover-blue w3-text-black w3-padding-large "><a
+									href="{% url 'cast_current' %}">Now</a></div>
+							<div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word"
+							     class="turn w3-hover-amber w3-text-black w3-padding-large"><a
+									href="{% url 'cast_hourly' %}">Hourly</a></div>
+							<div style="text-align: center; color: black; font-size: 20px; font-weight: 400; text-transform: uppercase; word-wrap: break-word"
+							     class="turn w3-hover-red w3-text-black w3-padding-large"><a
+									href="{% url 'cast_daily' %}">Daily</a></div>
+						</div>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
