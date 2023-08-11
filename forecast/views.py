@@ -1,9 +1,15 @@
 from datetime import datetime
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserChangeForm
 from django.shortcuts import render
 
 from forecast.forecast import get_forecast
 from forecast.models import NewsPost
+
+from django.shortcuts import render, redirect
+from .forms import RegistrationForm
+
 
 
 def calculate_sun_position():
@@ -28,6 +34,16 @@ def calculate_sun_position():
 
 
 # Create your views here.
+
+def registration(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # Redirect to the login page after successful registration
+    else:
+        form = RegistrationForm()
+    return render(request, 'registration.html', {'form': form})
 
 def page_not_found_view(request):
     return render(request, '404.html', status=404)
@@ -69,9 +85,21 @@ def about(request):
     return render(request, 'about.html')
 
 
+@login_required
 def account(request):
-    return None
-
+    if not request.user.is_authenticated:
+        return render(request, 'registration.html')
+    else:
+        if request.method == 'POST':
+            # User wants to update their account information
+            form = UserChangeForm(request.POST, instance=request.user)
+            if form.is_valid():
+                form.save()
+                return redirect('account')
+        else:
+            # Display account information
+            form = UserChangeForm(instance=request.user)
+        return render(request, 'account.html', {'form': form})
 
 def news(request):
     posts = NewsPost.objects.all()

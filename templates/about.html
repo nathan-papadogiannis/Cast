@@ -1,10 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<title>Cast! Home</title>
 
+{% extends "base.html" %}
+<body>
+{% block content %}
+	<!-- Split View Section -->
+	<div>
+		<div class="w3-row-padding w3-padding-hor-32" style="margin:0 -16px">
+			<!-- Two Thirds Section -->
+			<div class="movingbox w3-twothird w3-margin-bottom">
+				<div class="w3-container w3-border w3-border-black w3-round-large "
+				     style="filter: drop-shadow(6px 6px 5px #838983); padding-top: -8px">
+					<h2 class="w3-wide w3-center w3-margin-top">Current Cast!</h2>
+					<h5 class="w3-center w3-text-dark-gray" style="margin-top: -5px"><i>Let's See What's Out
+					                                                                    There...</i></h5>
+					<div class="w3-cell-top">
+						<div class="">
+							<hr style="margin-left: 40px; margin-right: 40px; border-top: 1px solid black">
+							<div class="weather">
+								<h2 style="text-align: center">Current Weather</h2>
+								{% for weather_data in current.weather %}
+									<h3>
+                <span style="display: inline-block; background-color: skyblue; padding: 5px; border-radius: 50%;"
+                      class="weather-icon">
+                    <img src="http://openweathermap.org/img/w/{{ weather_data.icon }}.png"
+                         alt="{{ weather_data.description }}">
+                </span>
+										{{ weather_data.description|capfirst }}
+									</h3>
+								{% endfor %}
+							</div>
+							<div class="weather-info">
+								<div class="weather-item">
+
+									<p>Temperature: <span class="temperature">{{ current.temp }}</span></p>
+									<p>Feels Like: <span class="temperature">{{ current.feels_like }}</span></p>
+									<p>Pressure: <span class="pressure">{{ current.pressure }}</span></p>
+									<p>Humidity: <span class="humidity">{{ current.humidity }}</span></p>
+									<p>Dew Point: <span class="dew-point">{{ current.dew_point }}</span></p>
+								</div>
+
+								<div class="weather-item">
+									<p>Sunrise:<br> <span
+											style="padding: 5px;border-radius: 30px; background-color: #c2eeee"
+											class="sunrise ">{{ current.sunrise }}</span></p>
+									<p>Sunset: <br> <span
+											style="padding: 5px;border-radius: 30px; background-color: #1c2336; color: #ffffcc"
+											class="sunset">{{ current.sunset }}</span></p>
+									<p>UV Index: <span class="uvi">{{ current.uvi }}</span></p>
+									<p>Clouds: <span class="clouds">{{ current.clouds }}</span></p>
+									<p>Visibility: <span class="visibility">{{ current.visibility }}</span></p>
+								</div>
+
+								<div class="weather-item">
+									<p>Wind Speed: <span class="wind-speed">{{ current.wind_speed }}</span></p>
+									<p>Wind Direction: <span class="wind-deg">{{ current.wind_deg }}</span></p>
+								</div>
+							</div>
+							<hr style="margin-left: 40px; margin-right: 40px; border-top: 1px solid black">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Third Section -->
+			<div class="w3-third w3-margin-bottom" style="filter: drop-shadow(6px 6px 5px #838983);">
+				<img src="buddy.jpg"
+				     alt="A picture of Nate Papadogiannis in a yellow beaning and orange plaid with a stuffed white tiger on his shoulder. He is pointing at the tiger and smiling."
+				     style="
+                     background-color: black;
+                     width:100%;
+                     border-top-left-radius: 8px;
+                     border-top-right-radius: 8px" class="w3-border w3-border-black">
+				<div class="w3-container w3-border w3-border-black"
+				     style="; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px">
+					<h5 class="w3-center"><b>Nate Papadogiannis</b>｜ <span
+							class="w3-tag w3-text-black css-selector w3-border w3-border-black w3-round-large w3-hover-amber w3-medium">He/Him</span>
+					</h5>
+				</div>
+				<div class="movingbox w3-container w3-border w3-border-black w3-round-large w3-margin-top">
+					<!-- The Contact Section -->
+					<a class="anchor" id="contact"></a>
+
+					<h5 class="w3-wide w3-center">CONTACT</h5>
+					<h6 class="w3-text-dark-gray w3-center" style="margin-top: -10px"><i>Send the crew a telegram!</i>
+					</h6>
+					<div class="movingbox w3-row w3-center w3-padding-16">
+						<div class="w3-row-padding css-selector w3-round-large w3-border w3-border-black"
+						     style="background-color: #F8C40D">
+							<div class="w3-third w3-center w3-margin-top w3-border-right w3-border-black">
+								<i class="fa fa-envelope-square w3-xxlarge w3-cell" style="color: black"
+								   onclick=location.href="mailto:helloto@natefromqueens.com"></i><br>
+								<p style="color: black">Mail</p>
+							</div>
+							<div class="w3-third w3-center w3-margin-top w3-border-right w3-border-black">
+								<i class="fa fa-github-square w3-xxlarge w3-cell" style="color: black"
+								   onclick=window.open("https://github.com/nathan-the-greathan","_blank")></i><br>
+								<p style="color: black">Git</p>
+							</div>
+							<div class="w3-third w3-center w3-margin-top">
+								<i class="fa fa-linkedin-square w3-xxlarge w3-cell" style="color: black"
+								   onclick=window.open("https://www.linkedin.com/in/natepapadogiannis/","_blank")></i><br>
+								<p style="color: black">LinkedIn</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- The Project Section -->
+	<div class="movingbox w3-ul w3-margin-bottom w3-round-large w3-border w3-border-black w3-text-black"
+	     style="filter: drop-shadow(6px 6px 5px #838983);">
+		<div class="w3-container w3-border-black" style="border-top-left-radius: 8px; border-top-right-radius: 8px">
+			<a class="anchor" id="projects"></a>
+			<h2 class="w3-wide w3-center w3-margin-top">PROJECTS</h2>
+			<h5 class="w3-center w3-text-dark-gray w3-margin-bottom" style="margin-top: -5px"><i>What I'm up to right
+			                                                                                     now</i></h5>
+		</div>
+		<div class="w3-container w3-padding w3-border-top w3-border-black" onclick=location.href="#humancast">HumanCast
+			<span class="w3-tag w3-amber w3-text-black w3-round-large w3-border w3-border-black w3-margin-left"><i
+					class="fa fa-arrow-down"></i></span>
+			<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black"><b>In Development</b> <i
+					class="fa fa-gear"></i></span></div>
+		<div class="w3-container w3-padding w3-border-top w3-border-black" onclick=location.href="#wormbot">WormBot, the
+		                                                                                                    Worm Week
+		                                                                                                    Referee
+			<span class="w3-tag w3-amber w3-text-black w3-round-large w3-border w3-border-black w3-margin-left"><i
+					class="fa fa-arrow-down"></i></span>
+			<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black"><b>Done</b> <i
+					class="fa fa-check-circle"></i></span>
+		</div>
+		<div class="w3-padding w3-border-top w3-border-black"
+		     style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; background-color: #BFB7B0">
+			More to come...
+		</div>
+	</div>
+	<div class="w3-cell">
+		<div class="w3-row-padding w3-padding-hor-32" style="margin:0 -16px">
+			<!-- The Projects -->
+			<div class="movingbox w3-third w3-margin-bottom" style="filter: drop-shadow(6px 6px 5px #838983)">
+				<a class="anchor" id="humancast"></a>
+				<img src="HumanCastBanner.png"
+				     alt="A banner depicting a beach scene with Brellbert on the sand. In the back Reads 'HumanCast, a Brellbert certified Weather Experiece'. In the lower left corner, it says 'Developed for Android'"
+				     style="width:100%; border-top-left-radius: 8px; border-top-right-radius: 8px"
+				     class="w3-border w3-border-black">
+				<div class="w3-container w3-border w3-border-black "
+				     style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; ">
+					<h2><b>HumanCast: Brellbert's Weather Station is Online!</b></h2>
+					<p><i class="fa fa-clock-o"></i> June 2nd, 2021</p>
+					<p style="margin-top: -20px">
+						<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black w3-margin-top"><b>Native Android</b></span>
+						<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black w3-margin-top"><b>Java</b></span>
+						<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black w3-margin-top"><b>UI/UX</b></span>
+						<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black w3-margin-top"><b>OpenWeather</b></span>
+					</p>
+					<hr style="border-top: 1px solid black">
+					<p> Something that's always bugged me is the mundaneness of checking the weather every morning
+					    before getting dressed.
+					    Weather apps are criminally boring (And honestly, not user-conscious). Sure, it may "feel like"
+					    60 degrees, but what
+					    does that mean to our user in words. Is it cold? Is it nice? Without feedback from the user,
+					    we'll never
+					    know. <br><br>
+
+					    Here's where <b>HumanCast</b> comes in.<br><br>
+
+					    It's high time checking the weather becomes a two-sided relationship. <b>HumanCast</b> is a new
+					    app
+					    for Android that delivers accurate weather data, personalized forecasts, and tongue-in-cheek
+					    humor from your new favorite weather pal, <i>Brellbert</i>.<br><br>
+					<p>
+					<h3><b>As of Now, <i>Brellbert</i> can...</b></h3>
+					<ul>
+						<li>Grab GPS data from user's device</li>
+						<li>Access <i>OpenWeather</i> data via their <i>One Call API</i></li>
+						<li>Give current weather forecast (With some snarky comments)</li>
+					</ul>
+					<hr style="border-top: 1px solid black">
+					<h3><b>What's Next On My To-Do List</b></h3>
+					<p> Goals for the app's future include allowing for user feedback to facilitate forecasts that can
+					    provide hyperspecific advice such as "It's 70 degrees, but you may feel chilly. Bring a jacket!"<br><br>
+
+					    Something else I've considered is making the jump from Android Native to Flutter, but as this is
+					    my
+					    first chance to use Android Native, I'd prefer to put that decision off until I've gotten the
+					    hang
+					    of mobile development down.<br><br>
+					    Check out the GitHub Repo below. </p>
+					<button class="btn css-selector w3-button w3-text-black w3-margin-bottom w3-round w3-border w3-border-black"
+					        onclick=window.open("https://github.com/nathan-the-greathan/HumanCast","_blank")>GH Repo
+					</button>
+				</div>
+			</div>
+			<div class="movingbox w3-third w3-margin-bottom" style="filter: drop-shadow(6px 6px 5px #838983)">
+				<a class="anchor" id="wormbot"></a>
+				<img src="WormBot.gif"
+				     alt="A GIF of WormBot responding to a message with emojis that spell out 'oh worm?'"
+				     style="width:100%; border-top-left-radius: 8px; border-top-right-radius: 8px"
+				     class="w3-border w3-border-black">
+				<div class="w3-container w3-border w3-border-black"
+				     style="; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px">
+					<h2><b>WormBot, The Worm Week Referee</b></h2>
+					<p><i class="fa fa-clock-o"></i> Feb 23rd, 2021<br></p>
+					<p style="margin-top: -20px">
+						<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black w3-margin-top"><b>Python</b></span>
+						<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black w3-margin-top"><b>Discord API</b></span>
+						<span class="css-selector w3-tag w3-text-black w3-round-large w3-border w3-border-black w3-margin-top"><b>JSON Database</b></span>
+					</p>
+					<hr style="border-top: 1px solid black">
+					<p style="word-wrap: break-word">
+						In the past, Worm Week (Context <a class="w3-hover-amber" href="#wormweek">here</a>) had been a
+						very small event
+						that I could scorekeep by myself, but as the participant list has grown past 50 people,
+						I've needed a way to keep track of points easily. This is the purpose of WormBot<br><br>
+
+						<b>WormBot</b> is a Discord bot that crossposts user submissions from the submission channel in
+						a
+						neatly formatted embed. Additionally, and most notably, it awards points to each user with the
+						click of an emote. This
+						new total gets added to the official scoreboard file and the newest version gets
+						uploaded to Google Sheets. This allows me to revert points back in case points are ever
+						wrongfully
+						given.<br><br>
+
+					<h3><b>As of Now, <i>WormBot</i> can...</b></h3>
+					<ul>
+						<li>Organize Worm Teams Randomly</li>
+						<li>Send Out <i>Daily Wormtivities</i></li>
+						<li>Keep Track of Points locally and in the cloud</li>
+						<li>Respond to User Commands (Both fun and functional ones)</li>
+						<li style="text-decoration: line-through;">Save The World</li>
+					</ul>
+					<hr style="border-top: 1px solid black">
+					<a class="anchor" id="wormweek"></a>
+					<h3><b>So... What is Worm Week?</b></h3><br>
+
+					Every year, the 3rd Saturday of February is Worm Day (or at least, it has been for the past
+					3 years after I made this holiday up). Each year, 2 teams across America spend the week
+					leading up to Worm Day competing in worm-themed creativity challenges (A.K.A. Wormtivities).
+					These can be anything from submitting worm haikus to drawing yourself as a worm to writing
+					a 1-sentence worm story.<br><br>
+
+					All participants earn points from either participating in each daily Wormtivity or from a
+					daily bonus (Like the early worm bonus where the first few participants earn double points for
+					their team). At the end of the week, there's a Final Wormdown where you can submit whatever you want
+					and the top 3 most voted submissions earn tons of points.<br><br>
+					<!--<button class="w3-button w3-hover-amber w3-margin-bottom" style="background: #588157; color: floralwhite" onclick=location.href="">Worm Week '21 Content</button>-->
+				</div>
+			</div>
+			<div class="w3-third w3-margin-bottom" style="filter: drop-shadow(6px 6px 5px #838983)">
+				<div class="movingbox w3-center w3-container w3-border w3-round-large w3-border-black">
+					<p><b>More to Come</b></p>
+					<p>Come back later!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="movingbox w3-ul w3-margin-bottom w3-round-large w3-border w3-border-black w3-text-black"
+	     style="filter: drop-shadow(6px 6px 5px #838983);">
+		<div class="w3-container w3-border-black" style="border-top-left-radius: 8px; border-top-right-radius: 8px">
+			<h2 class="w3-wide w3-center w3-margin-top">Hourly</h2>
+		</div>
+		{% for hour in hourly %}
+			<div class="w3-container w3-padding w3-border-top w3-border-black"> {{ hour.dt }}
+				<span class="w3-tag w3-amber w3-text-black w3-round-large w3-border w3-border-black w3-margin-left">{{ hour.temp }}</span>
+			</div>
+		{% endfor %}
+
+
+		<div class="w3-padding w3-border-top w3-border-black"
+		     style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; background-color: #BFB7B0"></div>
+	</div>
+{% endblock %}
 </body>
 </html>

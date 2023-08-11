@@ -156,11 +156,20 @@ img:hover{
   margin-top: 10px;
 }
 
-.news-post-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.hourly-card {
+    margin-bottom: 10px;
 }
+
+.first-card .w3-container {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.last-card .w3-container {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 
 .css-selector {
     background: linear-gradient(91deg, #87CEEB, whitesmoke);

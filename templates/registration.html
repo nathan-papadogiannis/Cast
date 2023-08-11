@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+<h2>Registration</h2>
+<form method="POST" action="{% url 'registration' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>

@@ -31,6 +31,8 @@ urlpatterns = [
     path('account/', views.account, name="account"),
     path('news/', views.news, name="news"),
     path('404/', views.page_not_found_view, name="404"),
+    path('register/', views.registration, name='registration'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

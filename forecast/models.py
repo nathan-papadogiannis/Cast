@@ -6,7 +6,6 @@ from taggit.managers import TaggableManager
 
 User = get_user_model()
 
-
 class NewsPost(models.Model):
     header_image = models.ImageField(upload_to='news/images')
     title = models.CharField(max_length=200)
